@@ -1,6 +1,7 @@
 numpy
 pandas
-matplotlib.pyplot
+matplotlib
+pyplot
 streamlit
 pydeck
 scikit-learn
