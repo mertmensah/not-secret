@@ -3,5 +3,5 @@ pandas
 matplotlib
 pydeck
 scikit-learn
-boto3
+openpyxl
 streamlit
