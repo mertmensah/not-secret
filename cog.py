@@ -41,7 +41,7 @@ st.title('Center of Gravity Solver')
 
 
 # Your Mapbox API token
-mapbox_api_token = "pk.eyJ1IjoibWVydG1lbnNhaCIsImEiOiJjbHlhZWJ1bW4xMmZxMmpwdWtiN3VqZTVoIn0.cJSoRI6C7zJQjwKALaki2w"  # Replace with your actual Mapbox API token
+mapbox_api_token = ""  # Replace 
 
 # Sidebar configuration
 with st.sidebar:
