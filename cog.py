@@ -4,16 +4,34 @@ import numpy as np
 from sklearn.cluster import KMeans
 import pydeck as pdk
 from math import radians, sin, cos, sqrt, atan2
+import boto3
+import io
 
-# bring in ZIP Codes from external source, to match coordinates to orders
+# LOCALbring in ZIP Codes from external source, to match coordinates to orders
 zips = pd.read_csv('zip_codes_us.csv')
+
+
+# Define S3 bucket and file key
+#s3_bucket = 'optiscs3'
+#s3_key = 'scriptsNdata/zip_codes_us.csv'
+
+# Initialize a session using Amazon S3
+#s3 = boto3.client('s3')
+
+# Download the file from S3 into a bytes object
+#obj = s3.get_object(Bucket=s3_bucket, Key=s3_key)
+#data = obj['Body'].read()
+
+# Use pandas to read the CSV file from the bytes object
+zips = pd.read_csv(io.BytesIO(data))
+
 
 # cleaning
 zips['zip'] = zips['zip'].astype(str) # covert type
 zips['zip'] = zips['zip'].astype(str).str.zfill(5) # add leading 0 until there are 5 char.s 
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="Center of Gravity Solver", page_icon=":articulated_lorry:")
+st.set_page_config(layout="wide", page_title="opti-Network: Center of Gravity Solver", page_icon=":articulated_lorry:")
 
 st.sidebar.title("Parameters")
 #st.logo('emailICON.jpg')
@@ -54,7 +72,7 @@ if uploaded_file is not None:
                 else:
                     unmatched_zips.append(zip_code)
 
-            # Show uploaded data in an expander
+            # Show uploaded data in an expandere
             with st.expander("Uploaded Demand Data"):
                 st.write(df_open_orders)
 
