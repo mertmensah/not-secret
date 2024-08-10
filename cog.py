@@ -31,7 +31,7 @@ else:
 
     # SIDEBAR
     with st.sidebar:
-        st.image("C:/Users/MertMM/Desktop/vsc-test/images/optisc-logo-black.svg", width=250)
+        st.image("images/optisc-logo-black.svg", width=250)
         st.title("Parameters")
         num_cogs = st.slider('**1. Number of Centers of Gravity**', min_value=1, max_value=10, value=3)
         st.write("**Note:** Additional nodes will impact solution time.")
