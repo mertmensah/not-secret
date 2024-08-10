@@ -24,7 +24,7 @@ else:
     st.title('opti-Network')
 
     # Your Mapbox API token
-    mapbox_api_token = "pk.eyJ1IjoibWVydG1lbnNhaCIsImEiOiJjbHlhZWJ1bW4xMmZxMmpwdWtiN3VqZTVoIn0.cJSoRI6C7zJQjwKALaki2w"  # Replace with your actual Mapbox API token
+    mapbox_api_token = ""  # Replace with your actual Mapbox API token
 
     # Placeholder for the state options in the sidebar
     state_options = []
